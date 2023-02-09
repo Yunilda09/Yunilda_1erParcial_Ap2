@@ -47,8 +47,6 @@ class PrestamoViewModel @Inject constructor(
                 monto = monto.toDoubleOrNull() ?: 0.0
             )
 
-
-
             viewModelScope.launch(Dispatchers.IO) {
                 prestamoRepository.insert(prestamo)
                 Limpiar()
