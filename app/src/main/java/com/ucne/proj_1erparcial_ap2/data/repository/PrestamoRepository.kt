@@ -8,11 +8,11 @@ import javax.inject.Inject
 class PrestamoRepository @Inject constructor(
     private val prestamoDao: PrestamoDao
     ){
-    suspend fun insert(prestamo: PrestamosEntity){
-        return prestamoDao.insert(prestamo)
+    suspend fun insert(deudor: PrestamosEntity){
+        return prestamoDao.insert(deudor)
     }
 
-    suspend fun fin(deudorId: Int) = prestamoDao.find(deudorId )
+   // suspend fun fin(deudorId: Int) = prestamoDao.find(deudorId )
 
     fun getList(): Flow<List<PrestamosEntity>> = prestamoDao.getList()
 }

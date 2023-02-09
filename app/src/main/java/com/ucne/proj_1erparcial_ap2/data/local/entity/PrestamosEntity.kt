@@ -5,11 +5,12 @@ import androidx.room.PrimaryKey
 
 
 @Entity(tableName= "Prestamos")
-    data class PrestamosEntity(
-    @PrimaryKey(autoGenerate = false)
+data class PrestamosEntity(
+    @PrimaryKey(autoGenerate = true)
 
-    val DeudorId: Int? = null,
-    val Cocepto: String,
-    val Monto: Double
+    val deudorId: Int? = null,
+    val deudor: String,
+    val concepto: String,
+    val monto: Double
 
     )

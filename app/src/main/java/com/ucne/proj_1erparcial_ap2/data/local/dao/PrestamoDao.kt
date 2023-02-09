@@ -9,11 +9,10 @@ interface PrestamoDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insert(prestamosEntity: PrestamosEntity)
 
-    @Query(""" SELETC * FROM Prestamos WHERE DeudorId =: deudorId LIMIT 1 """)
-    suspend fun find(deudorId: Int): PrestamosEntity?
+   //@Query(""" SELETC * FROM Prestamos WHERE DeudorId=: deudorId LIMIT 1 """)
+   // suspend fun find(deudorId: Int): PrestamosEntity?
 
     @Query("""SELECT * FROM Prestamos ORDER BY deudorId desc """)
     fun getList(): Flow<List<PrestamosEntity>>
-
 
 }
